@@ -9,7 +9,7 @@ from tensorflow.keras.optimizers import Adam
 
 tf.keras.utils.set_random_seed(627)
 
-data = pd.read_csv("ML/data/converted.csv")
+data = pd.read_csv("ML/Rice price forecasting/data/converted.csv")
 
 def windowed_dataset(data, window_size):
     X = []
