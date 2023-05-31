@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Capstone</string>
+    <string name="mini_feature1">Deteksi Penyakit Tanaman</string>
+    <string name="mini_feature2">Penjadwalan dan Controlling Tanaman</string>
+    <string name="mini_feature3">Perkiraan Harga</string>
+    <string name="next">Berikutnya</string>
+    <string name="titleAccessLocation">Akses ke Lokasi Anda</string>
+    <string name="descriptionAccessLocation">Untuk memberi Anda konten, Ricehero perlu mengakses lokasi perangkat Anda</string>
+    <string name="permission">Izinkan</string>
+    <string name="title_activity_main_page">MainPage</string>
+    <string name="title_home">Home</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_feedback">Feedback</string>
+    <string name="deskripsi_tanaman">Deskripsi Tanaman</string>
+    <string name="hama_penyakit">Hama dan Penyakit</string>
+    <string name="weather">Cuaca</string>
+    <string name="location">Jakarta, Indonesia</string>
+    <string name="temperature">25°</string>
+    <string name="information">Hari ini berawan</string>
+    <string name="know_the_disease">Ketahui Penyakit Tanaman</string>
+    <string name="step">Tahapan</string>
+    <string name="open_camera">Buka Camera</string>
+    <string name="take_picture">Ambil Gambar</string>
+    <string name="result">Lihat Hasil</string>
+    <string name="btn_take_picture">Ambil Gambar</string>
+    <string name="price_prediction">Perkiraan Pendapatan</string>
+    <string name="land_size">Ukuran petak tanah</string>
+    <string name="hektar">Dalam satuan hektar</string>
+    <string name="result_prediction">Hasil perkiraan pendapatan : </string>
+    <string name="calculate">Hitung</string>
+    <string name="your_feedback">Feedback Anda</string>
+    <string name="write_feedback">Tuliskan Feedback Anda</string>
+    <string name="submit_feedback">Submit Feedback</string>
+    <string name="send_success">Berhasil Dikirim</string>
+    <string name="send_error">Gagal terkirim</string>
+    <string name="plant_detail">Detail Tanaman</string>
+    <string name="rice_plant">Tanaman Padi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
