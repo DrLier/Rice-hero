@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="com.example.capstone.mainpage.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailPlantFragment"
+            app:destination="@id/detailPlantFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_cameraActivity"
+            app:destination="@id/cameraActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_schedule"
@@ -22,4 +29,21 @@
         android:name="com.example.capstone.mainpage.ui.feedback.FeedbackFragment"
         android:label="@string/title_feedback"
         tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/detailPlantFragment"
+        android:name="com.example.capstone.detailplant.DetailPlantFragment"
+        android:label="@string/plant_detail"
+        tools:layout="@layout/fragment_detail_plant" >
+        <action
+            android:id="@+id/action_detailPlantFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.example.capstone.camera.CameraActivity"
+        android:label="activity_camera"
+        tools:layout="@layout/activity_camera" />
 </navigation>

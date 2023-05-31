@@ -3,6 +3,7 @@ package com.example.capstone.mainpage
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -57,5 +58,13 @@ class MainPage : AppCompatActivity() {
                 startActivity(intent)
             }
         })
+
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
+            if (destination.id == R.id.detailPlantFragment) {
+                binding.navView.visibility = View.GONE
+            } else {
+                binding.navView.visibility = View.VISIBLE
+            }
+        }
     }
 }
