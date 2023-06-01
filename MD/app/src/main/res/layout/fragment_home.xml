@@ -265,7 +265,7 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/button"
                     android:text="@string/btn_take_picture"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
