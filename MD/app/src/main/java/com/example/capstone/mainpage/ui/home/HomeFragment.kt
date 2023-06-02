@@ -1,33 +1,32 @@
 package com.example.capstone.mainpage.ui.home
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.capstone.R
-import com.example.capstone.api.ApiConfig
-import com.example.capstone.api.WeatherResponse
+import com.example.capstone.data.WeatherPreference
 import com.example.capstone.databinding.FragmentHomeBinding
-import com.example.capstone.mainpage.ui.schedule.ScheduleViewModel
+import com.example.capstone.helper.HomeFactory
+import com.example.capstone.model.Weather
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "weather")
 
 class HomeFragment : Fragment() {
 
@@ -37,6 +36,7 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +49,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val pref = WeatherPreference.getInstance(requireContext().dataStore)
+        val factory : HomeFactory = HomeFactory.getInstance(pref)
+        homeViewModel = ViewModelProvider(requireActivity(), factory)[HomeViewModel::class.java]
 
         binding.buttonTakePicture.setOnClickListener {
             if (!allPermissionGranted()) {
@@ -68,39 +72,33 @@ class HomeFragment : Fragment() {
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
-        getMyLastLocation()
-    }
-
-    private fun getMyLastLocation() {
         if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) && checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)) {
             fusedLocationClient.lastLocation.addOnSuccessListener { location : Location? ->
                 if (location != null) {
-                    getWeather(location)
+                    homeViewModel.getCurrentWeather(location)
                 }
             }
         }
-     }
 
-    private fun getWeather(location: Location) {
-        val client = ApiConfig.getApiService().getCurrentWeather(location.latitude, location.longitude, "9e3120b9fe7fd347f870ba5d971f7b9c")
-        try {
-            client.enqueue(object : Callback<WeatherResponse> {
-                override fun onResponse(
-                    call: Call<WeatherResponse>,
-                    response: Response<WeatherResponse>
-                ) {
-                    binding.location.text = response.body()?.name
-                    binding.information.text = response.body()?.weather!![0].description
-                    Log.d("Location", response.body()?.name.toString())
-                }
+        homeViewModel.checkCurrentWeather().observe(requireActivity(), {
+            if (it != null) {
+                val celcius = it.main.temp.toInt() - 273
+                homeViewModel.saveWeather(
+                    Weather(
+                        it.name,
+                        celcius,
+                        it.weather[0].main
+                    )
+                )
+            }
+        })
 
-                override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
-                    Log.d("TAG", "Error")
-                }
-            })
-        }catch (E : Exception) {
-            Log.d("Tag", E.toString())
-        }
+        homeViewModel.getWeather().observe(requireActivity(), {
+            binding.location.text = it.location
+            binding.temperature.text = it.temperature.toString()
+            binding.information.text = it.description
+        })
+
     }
 
     private fun checkPermission(permission: String): Boolean {
@@ -139,6 +137,5 @@ class HomeFragment : Fragment() {
     companion object {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
-        const val RESULT_CODE = 1
     }
 }
