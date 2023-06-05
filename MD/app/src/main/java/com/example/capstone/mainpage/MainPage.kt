@@ -62,6 +62,8 @@ class MainPage : AppCompatActivity() {
         navController.addOnDestinationChangedListener{ _, destination, _ ->
             if (destination.id == R.id.detailPlantFragment) {
                 binding.navView.visibility = View.GONE
+            } else if (destination.id == R.id.pestDiseaseFragment) {
+                binding.navView.visibility = View.GONE
             } else {
                 binding.navView.visibility = View.VISIBLE
             }

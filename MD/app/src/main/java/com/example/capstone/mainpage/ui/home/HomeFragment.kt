@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var homeViewModel: HomeViewModel
+    private lateinit var location : Location
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -70,11 +72,16 @@ class HomeFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_navigation_home_to_detailPlantFragment)
         )
 
+        binding.pestAndDisease.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_navigation_home_to_pestDiseaseFragment)
+        )
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
         if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) && checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)) {
             fusedLocationClient.lastLocation.addOnSuccessListener { location : Location? ->
                 if (location != null) {
+                    this.location = location
                     homeViewModel.getCurrentWeather(location)
                 }
             }
@@ -83,6 +90,7 @@ class HomeFragment : Fragment() {
         homeViewModel.checkCurrentWeather().observe(requireActivity(), {
             if (it != null) {
                 val celcius = it.main.temp.toInt() - 273
+                Log.d("SUHU", celcius.toString())
                 homeViewModel.saveWeather(
                     Weather(
                         it.name,

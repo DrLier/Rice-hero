@@ -35,6 +35,8 @@
     <string name="send_error">Gagal terkirim</string>
     <string name="plant_detail">Detail Tanaman</string>
     <string name="rice_plant">Tanaman Padi</string>
+    <string name="plant_disease">Penyakit Tanaman</string>
+    <string name="plant_disease_description">Penyakit yang mungkin menyerang tanaman padi dari tahap pembibitan hingga panen </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

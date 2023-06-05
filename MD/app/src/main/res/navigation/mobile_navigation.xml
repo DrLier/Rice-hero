@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_home_to_cameraActivity"
             app:destination="@id/cameraActivity" />
+        <action
+            android:id="@+id/action_navigation_home_to_pestDiseaseFragment"
+            app:destination="@id/pestDiseaseFragment" />
     </fragment>
 
     <fragment
@@ -31,7 +34,7 @@
         tools:layout="@layout/fragment_feedback" />
     <fragment
         android:id="@+id/detailPlantFragment"
-        android:name="com.example.capstone.detailplant.DetailPlantFragment"
+        android:name="com.example.capstone.mainpage.ui.descriptionplant.DescriptionPlantFragment"
         android:label="@string/plant_detail"
         tools:layout="@layout/fragment_detail_plant" >
         <action
@@ -46,4 +49,16 @@
         android:name="com.example.capstone.camera.CameraActivity"
         android:label="activity_camera"
         tools:layout="@layout/activity_camera" />
+    <fragment
+        android:id="@+id/pestDiseaseFragment"
+        android:name="com.example.capstone.mainpage.ui.pestdisease.PestDiseaseFragment"
+        android:label="fragment_pest_disease"
+        tools:layout="@layout/fragment_pest_disease" >
+        <action
+            android:id="@+id/action_pestDiseaseFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
