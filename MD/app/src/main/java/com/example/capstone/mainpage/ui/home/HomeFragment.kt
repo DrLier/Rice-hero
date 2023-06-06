@@ -76,6 +76,12 @@ class HomeFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_navigation_home_to_pestDiseaseFragment)
         )
 
+        homeViewModel.getWeather().observe(requireActivity(), {
+            binding.location.text = it.location
+            binding.temperature.text = it.temperature.toString()
+            binding.information.text = it.description
+        })
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
         if (checkPermission(Manifest.permission.ACCESS_FINE_LOCATION) && checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION)) {
@@ -99,12 +105,6 @@ class HomeFragment : Fragment() {
                     )
                 )
             }
-        })
-
-        homeViewModel.getWeather().observe(requireActivity(), {
-            binding.location.text = it.location
-            binding.temperature.text = it.temperature.toString()
-            binding.information.text = it.description
         })
 
     }
