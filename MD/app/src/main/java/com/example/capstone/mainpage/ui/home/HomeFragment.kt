@@ -20,12 +20,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.capstone.R
+import com.example.capstone.data.InitialDataPestDisease.listDataPlantDisease
 import com.example.capstone.data.WeatherPreference
 import com.example.capstone.databinding.FragmentHomeBinding
 import com.example.capstone.helper.HomeFactory
 import com.example.capstone.model.Weather
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "weather")
 
@@ -39,6 +42,7 @@ class HomeFragment : Fragment() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var location : Location
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,16 +60,10 @@ class HomeFragment : Fragment() {
         val factory : HomeFactory = HomeFactory.getInstance(pref)
         homeViewModel = ViewModelProvider(requireActivity(), factory)[HomeViewModel::class.java]
 
+        checkPermissionCamera()
+
         binding.buttonTakePicture.setOnClickListener {
-            if (!allPermissionGranted()) {
-                ActivityCompat.requestPermissions(
-                    requireActivity(),
-                    REQUIRED_PERMISSIONS,
-                    REQUEST_CODE_PERMISSIONS
-                )
-            } else {
-                it.findNavController().navigate(R.id.action_navigation_home_to_cameraActivity)
-            }
+            it.findNavController().navigate(R.id.action_navigation_home_to_cameraActivity)
         }
 
         binding.descriptionPlant.setOnClickListener(
@@ -107,6 +105,16 @@ class HomeFragment : Fragment() {
             }
         })
 
+    }
+
+    private fun checkPermissionCamera() {
+        if (!allPermissionGranted()) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                REQUIRED_PERMISSIONS,
+                REQUEST_CODE_PERMISSIONS
+            )
+        }
     }
 
     private fun checkPermission(permission: String): Boolean {

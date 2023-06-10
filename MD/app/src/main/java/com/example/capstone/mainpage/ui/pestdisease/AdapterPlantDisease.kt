@@ -13,7 +13,7 @@ import com.example.capstone.databinding.ItemPlantDiseaseBinding
 import com.example.capstone.mainpage.ui.detailpestdisease.DetailPestDisease
 import com.example.capstone.model.PlantDisease
 
-class AdapterPlantDisease(private val listPlantDisease : ArrayList<PlantDisease>) : RecyclerView.Adapter<AdapterPlantDisease.ViewHolder>() {
+class AdapterPlantDisease(private val listPlantDisease : List<PlantDisease>) : RecyclerView.Adapter<AdapterPlantDisease.ViewHolder>() {
 
     class ViewHolder(var binding : ItemPlantDiseaseBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -25,10 +25,10 @@ class AdapterPlantDisease(private val listPlantDisease : ArrayList<PlantDisease>
     override fun getItemCount() = listPlantDisease.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val (name, type, photo) = listPlantDisease[position]
-        Glide.with(holder.itemView.context).load(photo).into(holder.binding.imagePlantDisease)
-        holder.binding.typePlantDisease.text = type
-        holder.binding.plantDisease.text = name
+        val plantDiseaseData = listPlantDisease[position]
+        Glide.with(holder.itemView.context).load(plantDiseaseData.photo).into(holder.binding.imagePlantDisease)
+        holder.binding.typePlantDisease.text = plantDiseaseData.type
+        holder.binding.plantDisease.text = plantDiseaseData.name
         holder.binding.cardView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailPestDisease::class.java)
             intent.putExtra(DATA, listPlantDisease[position])

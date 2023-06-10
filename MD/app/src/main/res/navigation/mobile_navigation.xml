@@ -12,13 +12,19 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_detailPlantFragment"
-            app:destination="@id/detailPlantFragment" />
+            app:destination="@id/detailPlantFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <action
             android:id="@+id/action_navigation_home_to_cameraActivity"
-            app:destination="@id/cameraActivity" />
+            app:destination="@id/cameraActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <action
             android:id="@+id/action_navigation_home_to_pestDiseaseFragment"
-            app:destination="@id/pestDiseaseFragment" />
+            app:destination="@id/pestDiseaseFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 
     <fragment
@@ -40,6 +46,8 @@
         <action
             android:id="@+id/action_detailPlantFragment_to_navigation_home"
             app:destination="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_home"
             app:popUpToInclusive="true" />
@@ -57,6 +65,8 @@
         <action
             android:id="@+id/action_pestDiseaseFragment_to_navigation_home"
             app:destination="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_home"
             app:popUpToInclusive="true" />

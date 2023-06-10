@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.capstone.R
-import com.example.capstone.data.ListPlantDisease.listDataPlantDisease
 import com.example.capstone.databinding.FragmentPestDiseaseBinding
+import com.example.capstone.helper.DiseaseFactory
+import com.example.capstone.model.PlantDisease
 
 class PestDiseaseFragment : Fragment() {
 
@@ -19,6 +21,7 @@ class PestDiseaseFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var pestDiseaseViewModel: PestDiseaseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,16 +40,21 @@ class PestDiseaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showRecyclerList()
+        val factory : DiseaseFactory = DiseaseFactory.getInstance(requireContext())
+        pestDiseaseViewModel = ViewModelProvider(requireActivity(), factory)[PestDiseaseViewModel::class.java]
+
+        pestDiseaseViewModel.getPestListDisease().observe(requireActivity(), {
+            showRecyclerList(it)
+        })
 
         binding.backButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_pestDiseaseFragment_to_navigation_home)
         )
     }
 
-    private fun showRecyclerList() {
+    private fun showRecyclerList(plantDisease : List<PlantDisease>) {
         binding.listPlantDisease.layoutManager = GridLayoutManager(requireContext(), 2)
-        val listPlantDisease = AdapterPlantDisease(listDataPlantDisease)
+        val listPlantDisease = AdapterPlantDisease(plantDisease)
         binding.listPlantDisease.adapter = listPlantDisease
     }
 }
