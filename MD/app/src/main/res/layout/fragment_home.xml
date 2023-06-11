@@ -121,7 +121,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
-                    android:text="@string/location"
                     android:textSize="11sp" />
 
                 <TextView
@@ -131,7 +130,6 @@
                     android:layout_below="@id/location"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/temperature"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -143,7 +141,6 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/information"
                     android:textSize="11sp" />
 
                 <ImageView
@@ -265,7 +262,7 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/button"
                     android:text="@string/btn_take_picture"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center" />
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>

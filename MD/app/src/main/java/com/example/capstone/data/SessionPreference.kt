@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 
 class SessionPreference private constructor(private val dataStore: DataStore<Preferences>){
 
-    private val session = booleanPreferencesKey("session")
+
 
     fun getSession() : Flow<Boolean> {
         return dataStore.data.map {
@@ -27,6 +27,8 @@ class SessionPreference private constructor(private val dataStore: DataStore<Pre
     companion object {
         @Volatile
         private var INSTANCE : SessionPreference? = null
+
+        private val session = booleanPreferencesKey("session")
 
         fun getInstance(dataStore: DataStore<Preferences>) : SessionPreference {
             return INSTANCE ?: synchronized(this) {

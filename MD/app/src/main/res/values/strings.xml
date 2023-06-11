@@ -33,4 +33,14 @@
     <string name="submit_feedback">Submit Feedback</string>
     <string name="send_success">Berhasil Dikirim</string>
     <string name="send_error">Gagal terkirim</string>
+    <string name="plant_detail">Detail Tanaman</string>
+    <string name="rice_plant">Tanaman Padi</string>
+    <string name="plant_disease">Penyakit Tanaman</string>
+    <string name="plant_disease_description">Penyakit yang mungkin menyerang tanaman padi dari tahap pembibitan hingga panen </string>
+    <string name="symptom">Gejala</string>
+    <string name="cause">Penyebab</string>
+    <string name="effect">Akibat</string>
+    <string name="prevention_treatment">Pencegahan dan Penanganan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
