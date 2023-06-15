@@ -3,3 +3,4 @@ This folder stores the cloud computing codebase of our application that is used 
 
 ### - rice-hero 🦸
   This folder stores the code for making a cloud build of the ml model. The instruction to deploy the model is listed on readme.md
+
