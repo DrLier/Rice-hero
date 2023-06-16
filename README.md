@@ -1,3 +1,5 @@
+![alt text](https://github.com/DrLier/Rice-hero/blob/main/Assets/Logo%20app.png?raw=true)
+
 # RICEHERO-App 🌾
 
 **RICEHERO** was created **to develop the utilization of technology in agriculture and assist farmers in the farming process**, espicially in acccurately **detecting** diseases and pests in rice. From the results, **information** will be provided about the symptoms, causes, prevention, and treatment of the disease. The app also has other main features which are **Crop Monitoring Schedule, Rice Price and Yield Forecasting, Weather API for Monitoring, consultation, and farming tips & tricks.**
