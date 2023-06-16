@@ -15,6 +15,7 @@ https://cloud.google.com/run/docs/quickstarts/build-and-deploy#containerizing
 gcloud builds submit --tag gcr.io/rice-hero-389314/index
 ```
 ```
+
 gcloud run deploy --image gcr.io/rice-hero-389314/index --platform managed
 ```
 
