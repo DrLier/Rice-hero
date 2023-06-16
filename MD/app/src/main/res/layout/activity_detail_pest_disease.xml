@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainpage.ui.detailpestdisease.DetailPestDisease">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@null"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Nama Penyakit"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Jenis Penyakit"
+            android:textStyle="normal"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/type"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="24dp"
+            app:cardCornerRadius="24dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/pic_hawar_daun_bakteri" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:textStyle="bold"
+            android:text="@string/symptom"
+            android:textSize="22sp"
+            app:layout_constraintTop_toBottomOf="@id/cardViewImage"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/symptomDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            tools:text="&#8226; Luka pada tepi daun yang berair\n&#8226; Daun mengering keriput dengan warna hijau keputihan\n&#8226; Cairan bakteri berwarna putih menetes dari daun\n\nGejala awal yang disebabkan adalah berubahnya warna daun dan mengering keriput. Luka pada tepi daun yang berarir muncul pertama kali pada daun. Luka ini akan membentuk luka yang semakin besar apabila dibiarkan. Pada tahap akhir penyakit, cairan bakteri yang berwarna putih layaknya susu akan menetes dari daun, dimana tetesan ini akan meninggalkan kerak putih."
+            app:layout_constraintTop_toBottomOf="@id/symptom"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/dividerLine1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#2EA15E"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toBottomOf="@id/symptomDescription"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/cause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="@string/cause"
+            app:layout_constraintTop_toBottomOf="@id/dividerLine1"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/causeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18sp"
+            tools:text="Penyakit ini disebabkan oleh bakteri Xanthomonas campestris pv. Oryzae yang dapat bertahan hidup di gulma. Bakteri dapat menyerang pada luka daun, dipicu penggunaan pupuk N berlebihan, kurangnya pupuk kalium, dan kelembaban tinggi. Semakin lama penyakit menyerang tanaman, semakin tinggi kerugian panen yang disebabkan. Ketika tanaman padi terinfeksi, sebagian besar bulir padi akan menjadi rusak. Penyakit ini biasanya terjadi di lingkungan beriklim tropis."
+            app:layout_constraintTop_toBottomOf="@id/cause"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <View
+            android:id="@+id/dividerLine2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#2EA15E"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toBottomOf="@id/causeDescription"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/effect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="@string/effect"
+            app:layout_constraintTop_toBottomOf="@id/dividerLine2"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/effectDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18sp"
+            tools:text="Serangan yang terjadi pada tanaman padi akan menyebabkan tanaman menjadi layu dan mati."
+            app:layout_constraintTop_toBottomOf="@id/effect"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/dividerLine3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#2EA15E"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toBottomOf="@id/effectDescription"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/preventionAndTreatment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="@string/prevention_treatment"
+            app:layout_constraintTop_toBottomOf="@id/dividerLine3"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/descriptionPreventionAndTreatment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/preventionAndTreatment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="&#8226; Gunakan benih yang sehat dan bersertifikat \n&#8226; Menanam varietas yang tahan penyakit"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

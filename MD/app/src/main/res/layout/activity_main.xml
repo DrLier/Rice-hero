@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".welcomescreen.MainActivity">
+
+    <ImageView
+        android:id="@+id/welcomeImage1"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_welcome_screen1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/mini_feature1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mini_feature1"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/welcomeImage1"
+        app:layout_constraintStart_toStartOf="@id/welcomeImage1"
+        app:layout_constraintTop_toBottomOf="@id/welcomeImage1" />
+
+    <ImageView
+        android:id="@+id/welcomeImage2"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_welcome_screen2"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/mini_feature2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mini_feature2"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/welcomeImage2"
+        app:layout_constraintStart_toStartOf="@id/welcomeImage2"
+        app:layout_constraintTop_toBottomOf="@id/welcomeImage2" />
+
+    <ImageView
+        android:id="@+id/welcomeImage3"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_welcome_screen3"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/mini_feature3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mini_feature3"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/welcomeImage3"
+        app:layout_constraintStart_toStartOf="@id/welcomeImage3"
+        app:layout_constraintTop_toBottomOf="@id/welcomeImage3" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/menu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:altSrc="@drawable/ic_circle_full_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/menu2"
+        app:layout_constraintTop_toBottomOf="@id/mini_feature1"
+        app:srcCompat="@drawable/ic_circle_24"
+        app:tint="@color/green" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/menu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:altSrc="@drawable/ic_circle_full_24"
+        app:layout_constraintLeft_toRightOf="@id/menu1"
+        app:layout_constraintRight_toLeftOf="@id/menu3"
+        app:layout_constraintTop_toTopOf="@id/menu1"
+        app:srcCompat="@drawable/ic_circle_24"
+        app:tint="@color/green"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/menu3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:altSrc="@drawable/ic_circle_full_24"
+        app:layout_constraintLeft_toRightOf="@id/menu2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menu1"
+        app:srcCompat="@drawable/ic_circle_24"
+        app:tint="@color/green"/>
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

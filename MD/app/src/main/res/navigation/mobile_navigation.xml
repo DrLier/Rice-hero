@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.capstone.mainpage.ui.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailPlantFragment"
+            app:destination="@id/detailPlantFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_home_to_cameraActivity"
+            app:destination="@id/cameraActivity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_home_to_pestDiseaseFragment"
+            app:destination="@id/pestDiseaseFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.capstone.mainpage.ui.schedule.ScheduleFragment"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/navigation_feedback"
+        android:name="com.example.capstone.mainpage.ui.feedback.FeedbackFragment"
+        android:label="@string/title_feedback"
+        tools:layout="@layout/fragment_feedback" />
+    <fragment
+        android:id="@+id/detailPlantFragment"
+        android:name="com.example.capstone.mainpage.ui.descriptionplant.DescriptionPlantFragment"
+        android:label="@string/plant_detail"
+        tools:layout="@layout/fragment_detail_plant" >
+        <action
+            android:id="@+id/action_detailPlantFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.example.capstone.camera.CameraActivity"
+        android:label="activity_camera"
+        tools:layout="@layout/activity_camera" />
+    <fragment
+        android:id="@+id/pestDiseaseFragment"
+        android:name="com.example.capstone.mainpage.ui.pestdisease.PestDiseaseFragment"
+        android:label="@string/type_disease"
+        tools:layout="@layout/fragment_pest_disease" >
+        <action
+            android:id="@+id/action_pestDiseaseFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
