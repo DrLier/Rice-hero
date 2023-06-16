@@ -1,12 +1,10 @@
 # RICEHERO-App 🌾
 
-![LOGO RICEHERO]([URL_to_image.png](https://drive.google.com/file/d/1UV2JPB9rPr4-7fWndzo2Fz04VnHgyYIQ/view?usp=sharing))
+**RICEHERO** was created **to develop the utilization of technology in agriculture and assist farmers in the farming process**, espicially in acccurately **detecting** diseases and pests in rice. From the results, **information** will be provided about the symptoms, causes, prevention, and treatment of the disease. The app also has other main features which are **Crop Monitoring Schedule, Rice Price and Yield Forecasting, Weather API for Monitoring, consultation, and farming tips & tricks.**
 
 Our project, Ricehero, is a project aimed to improve rice accessibility and rice agribusiness. We hoped to develop an application that can help rice farmers plan their rice farming more effectively and efficiently.
 
 As the name suggests, we combine two words from English language, namely Rice and Hero, to capture the dictionary definition of "Rice with good qualities" inline with our goal to provide a platform for rice farmer to improve their crop management accordingly.
-
-So, **RICEHERO** was created **to develop the utilization of technology in agriculture and assist farmers in the farming process**, espicially in acccurately **detecting** diseases and pests in rice. From the results, **information** will be provided about the symptoms, causes, prevention, and treatment of the disease. The app also has other main features which are **Crop Monitoring Schedule, Rice Price and Yield Forecasting, Weather API for Monitoring, consultation, and farming tips & tricks.**
 
 ## Our Team | | C23-PC627 🤝
 
@@ -31,3 +29,17 @@ Our team consists of three paths with different tasks, namely Mobile Development
 | M340DKY3778 | Shelomita Puspa Dara Kinanti |
 
 ## Features 💡
+
+### Rice Plant Disease Classification
+
+### Plant Monitoring Schedule
+
+### Weather API
+
+## Next Features Release
+
+### Rice Price and Crop Yield Forecasting
+
+### CONSULTATION
+
+### FARMING TIPS & TRICKS
