@@ -7,12 +7,12 @@ This folder stores the machine learning feature of our application. Listed below
   <p>In the rice disease classification folder, we store the dataset that we use to build the model, model building notebook, and the model py file. </p>
   
   **1. Machine Learning Model**
-  <p>
-  In Rice Disease Classification, we use the \[Convolutional Neural Network (CNN)\]\(https://www.tensorflow.org/tutorials/images/cnn\) model to classify rice diseases. Convolutional Neural Network (CNN) is a type of neural network that is commonly used in image data. Convolutional Neural Network (CNN) can be used to detect and recognize objects in an image. So, with CNN, our application will be able to detect and classify the type of disease that exists in rice plants through an image. We modeled 4 classes of [rice diseases](https://www.kaggle.com/datasets/shareef0612/riceleaf-dataset), namely: brown spot, blast, leaf blight, and tungro. We also modeled 1 [healthy rice](https://www.kaggle.com/datasets/gutierrezsoares/rice-leafs-500px) class as a positive control.  </p>
-  <p>
-  We use [transfer learning](https://www.tensorflow.org/tutorials/images/transfer_learning) method with [InceptionV3](https://keras.io/api/applications/inceptionv3/) and we are able to reach 0.9552 validation accuracy and 0.9195 test accuracy based on the model. We save the model with [.h5]([https://www.tensorflow.org/tutorials/images/transfer_learning](https://www.tensorflow.org/tutorials/keras/save_and_load)) format </p>
-  <p>
-  The notebooks that we use can be accessed in` [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LTlVFqXsu22dOASi0gcyF6dbU51Pbfqq?usp=sharing) </p>
+
+In Rice Disease Classification, we use the [Convolutional Neural Network (CNN)](https://www.tensorflow.org/tutorials/images/cnn) model to classify rice diseases. Convolutional Neural Network (CNN) is a type of neural network that is commonly used in image data. Convolutional Neural Network (CNN) can be used to detect and recognize objects in an image. So, with CNN, our application will be able to detect and classify the type of disease that exists in rice plants through an image. We modeled 4 classes of [rice diseases](https://www.kaggle.com/datasets/shareef0612/riceleaf-dataset), namely: brown spot, blast, leaf blight, and tungro. We also modeled 1 [healthy rice](https://www.kaggle.com/datasets/gutierrezsoares/rice-leafs-500px) class as a positive control.  
+ 
+We use [transfer learning](https://www.tensorflow.org/tutorials/images/transfer_learning) method with [InceptionV3](https://keras.io/api/applications/inceptionv3/) and we are able to reach 0.9552 validation accuracy and 0.9195 test accuracy based on the model. We save the model with [.h5]([https://www.tensorflow.org/tutorials/images/transfer_learning](https://www.tensorflow.org/tutorials/keras/save_and_load)) format.
+ 
+The notebooks that we use can be accessed in` [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LTlVFqXsu22dOASi0gcyF6dbU51Pbfqq?usp=sharing) 
   
 ### - Rice Price Forecasting 💰
   <p> In the rice price forecasting folder, we store the dataset, model building notebook, and the model py file. </p>
