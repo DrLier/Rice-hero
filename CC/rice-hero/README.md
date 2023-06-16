@@ -12,11 +12,11 @@ https://cloud.google.com/sdk/docs/install
 https://cloud.google.com/run/docs/quickstarts/build-and-deploy#containerizing
 ### 5. Cloud build & deploy
 ```
-gcloud builds submit --tag gcr.io/rice-hero-389314/index
+gcloud builds submit --tag gcr.io/rice-hero/index
 ```
 ```
 
-gcloud run deploy --image gcr.io/rice-hero-389314/index --platform managed
+gcloud run deploy --image gcr.io/rice-hero/index --platform managed
 ```
 
 ### Test
