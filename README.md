@@ -1,4 +1,5 @@
-<img src="https://github.com/DrLier/Rice-hero/blob/main/Assets/Logo%20app.png" width="250" height="250" />
+<p align="center">
+  <img src="https://github.com/DrLier/Rice-hero/blob/main/Assets/Logo%20app.png" width="250" height="250" />
 
 # RICEHERO-App 🌾
 
