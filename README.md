@@ -1,4 +1,4 @@
-![alt text](https://github.com/DrLier/Rice-hero/blob/main/Assets/Logo%20app.png?raw=true){: width="100"}
+![alt text](https://github.com/DrLier/Rice-hero/blob/main/Assets/Logo%20app.png | width=100)
 
 # RICEHERO-App 🌾
 
