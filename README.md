@@ -61,3 +61,8 @@ This feature is used if the user feels difficulties during the farming process, 
 ### FARMING TIPS & TRICKS
 
 This feature is useful for providing users with tips & tricks for successful farming. This feature is intended to help users from the beginning of farming until harvest time. This feature is also useful for the general public who have an interest in agriculture or who want to start farming.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**Credit For:**
+
+*_© RICEHERO Team's Bangkit Academy 2023_*
