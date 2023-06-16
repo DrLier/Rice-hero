@@ -32,14 +32,26 @@ Our team consists of three paths with different tasks, namely Mobile Development
 
 ### Rice Plant Disease Classification
 
+This feature is useful for displaying information related to the symptoms, causes, prevention, and treatment of rice diseases. This feature is equipped with a camera or direct access to local files to upload images of rice diseases.  This feature will classify four rice diseases namely brown spot, blast, bacterial leaf blight, and tungro and combined with healthy rice.
+
 ### Plant Monitoring Schedule
+
+In this feature, combined with the weather API, users will get daily crop management recommendations using the scheduled cycle method and can make informed decisions about their planting schedule. Users can also input planting dates and get day-to-day care recommendations until harvest time.
 
 ### Weather API
 
-## Next Features Release
+This feature is used to view the weather when users will be farming. This is useful so that users can make informed decisions regarding their planting schedules.
+
+## Next Feature Releases 🔜
 
 ### Rice Price and Crop Yield Forecasting
 
+In this feature, users will get recommendations on weekly rice prices and yields. 
+
 ### CONSULTATION
 
+This feature is used if the user feels difficulties during the farming process, therefore this feature will provide consultation from experts directly so that it can solve the problems experienced.
+
 ### FARMING TIPS & TRICKS
+
+This feature is useful for providing users with tips & tricks for successful farming. This feature is intended to help users from the beginning of farming until harvest time. This feature is also useful for the general public who have an interest in agriculture or who want to start farming.
